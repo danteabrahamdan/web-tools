@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <main class="container">
+    <div class="content-left">
+      <nav>
+        <ul>
+          <li><a href="#">TOOLS.</a></li>
+        </ul>
+      </nav>
+
+      <img src="assets/img/lamp.png" alt="logo" class="img-logo">
+
+      <div class="card-output">
+        <div class="card-content">
+          <p class="card-description">
+          -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);<br>
+          -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);<br>
+          box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+          </p>
+        </div>
+
+        <div class="card-options">
+          <span class="card-copy">COPIAR</span>
+        </div>
+      </div>
+
+      <footer>
+        <span><a href="#">Facebook</a></span>
+        <span>Copyright &copy; </span>
+      </footer>
+    </div>
+    
+    <div class="content-right">
+      <div class="card-form">
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Tab-1')" id="defaultOpen">Box shadow</button>
+          <button class="tablinks" onclick="openCity(event, 'Tab-2')">Border Radius</button>
+          <button class="tablinks" onclick="openCity(event, 'Tab-3')">Select color</button>
+        </div>
+        
+        <!-- First Tab -->
+        <div id="Tab-1" class="tabcontent">
+          <form action="" class="form-actions">
+            <div class="form-1">
+              <label for="">Desplazamiento en X</label>
+              <div class="input">
+                <span class="input-l">00</span>
+                <input type="range" min="0" max="100">
+                <span class="input-l">100</span>
+              </div>
+            </div>
+  
+            <div class="form-1">
+              <label for="">Desplazamiento en Y</label>
+              <div class="input">
+                <span class="input-l">00</span>
+                <input type="range" min="0" max="100">
+                <span class="input-l">100</span>
+              </div>
+            </div>
+  
+            <div class="form-1">
+              <label for="">Difuminado</label>
+              <div class="input">
+                <span class="input-l">00</span>
+                <input type="range" min="0" max="100">
+                <span class="input-l">100</span>
+              </div>
+            </div>
+  
+            <div class="form-1">
+              <label for="">Porporcion</label>
+              <div class="input">
+                <span class="input-l">00</span>
+                <input type="range" min="0" max="100">
+                <span class="input-l">100</span>
+              </div>
+            </div>
+  
+            <div class="form-1 color-picker">
+              <label for="">Color de sombra: </label>
+              <input type="color" value="#000000">
+            </div>
+  
+            <div class="form-1">
+              <label for="">Opacidad</label>
+              <div class="input">
+                <span class="input-l">0</span>
+                <input type="range" min="0" max="100">
+                <span class="input-l">1</span>
+              </div>
+            </div>
+          </form>
+
+          <div class="float-btn">
+            <div class="btn-float-orange">
+              <div class="logo-refresh"></div>
+            </div>
+            <!-- <span>Reestablecer estilos</span> -->
+          </div>
+        </div>
+        
+        <!-- Second Tab -->
+        <div id="Tab-2" class="tabcontent">
+          <h3>Tab 2</h3>
+          <p>Description tab 2.</p> 
+        </div>
+        
+        <!-- Third Tab -->
+        <div id="Tab-3" class="tabcontent">
+          <h3>Tab 3</h3>
+          <p>Descripction tab 3.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/anime.min.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
