@@ -23,3 +23,31 @@ inputOpacity.value = opacity * 100
 output.innerHTML =  `-webkit-box-shadow: ${offset_x}px ${offset_y}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity});<br>
                     -moz-box-shadow: ${offset_x}px ${offset_y}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity});<br>
                     box-shadow: ${offset_x}px ${offset_y}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity})`
+
+const inputs = document.querySelectorAll('input')
+inputs.forEach(input => {
+    input.addEventListener('input', (e) => {
+        offset_x = inputOffsetX.value
+        offset_y = inputOffsetY.value
+        blur = inputBlur.value
+        spread = inputSpread.value
+        opacity = inputOpacity.value / 100
+        color = inputColor.value
+
+        redHex = (color.toString().substring(1, 3)).toString(16)
+        greenHex = (color.toString().substring(3, 5)).toString(16)
+        blueHex = (color.toString().substring(5, 7)).toString(16)
+
+        red = parseInt(redHex, 16)
+        green = parseInt(greenHex, 16)
+        blue = parseInt(blueHex, 16)
+
+        card.style.boxShadow = `${offset_x}px ${offset_y}px ${blur}px ${spread}px rgba(${red}, ${green}, ${blue}, ${opacity})`
+
+        output.innerHTML =  `-webkit-box-shadow: ${offset_x}px ${offset_y}px ${blur}px ${spread}px rgba(${red}, ${green}, ${blue}, ${opacity});<br>
+                    -moz-box-shadow: ${offset_x}px ${offset_y}px ${blur}px ${spread}px rgba(${red}, ${green}, ${blue}, ${opacity});<br>
+                    box-shadow: ${offset_x}px ${offset_y}px ${blur}px ${spread}px rgba(${red}, ${green}, ${blue}, ${opacity})`
+
+    })
+    
+})
