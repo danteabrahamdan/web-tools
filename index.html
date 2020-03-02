@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/main.css">
-  <title>Document</title>
+  <title>Web Tools</title>
 </head>
 <body>
   
@@ -12,23 +12,23 @@
     <div class="content-left">
       <nav>
         <ul>
-          <li><a href="#">TOOLS.</a></li>
+          <li><a href="./index.html">TOOLS.</a></li>
         </ul>
       </nav>
 
       <img src="assets/img/lamp.png" alt="logo" class="img-logo">
 
-      <div class="card-output">
+      <div class="card-output" id="output">
         <div class="card-content">
-          <p class="card-description">
-          -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);<br>
-          -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);<br>
-          box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+          <p class="card-description" id="card-description">
+          -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, .1);<br>
+          -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, .1);<br>
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, .1);
           </p>
         </div>
 
         <div class="card-options">
-          <span class="card-copy">COPIAR</span>
+          <span class="card-copy" id="copy-btn">COPIAR</span>
         </div>
       </div>
 
@@ -52,18 +52,18 @@
             <div class="form-1">
               <label for="">Desplazamiento en X</label>
               <div class="input">
-                <span class="input-l">00</span>
-                <input type="range" min="0" max="100">
-                <span class="input-l">100</span>
+                <span class="input-l">-100</span>
+                <input type="range" min="-100" max="100" id="input-offset-x">
+                <span class="input-l">+100</span>
               </div>
             </div>
   
             <div class="form-1">
               <label for="">Desplazamiento en Y</label>
               <div class="input">
-                <span class="input-l">00</span>
-                <input type="range" min="0" max="100">
-                <span class="input-l">100</span>
+                <span class="input-l">-100</span>
+                <input type="range" min="-100" max="100" id="input-offset-y">
+                <span class="input-l">+100</span>
               </div>
             </div>
   
@@ -71,7 +71,7 @@
               <label for="">Difuminado</label>
               <div class="input">
                 <span class="input-l">00</span>
-                <input type="range" min="0" max="100">
+                <input type="range" min="0" max="100" id="input-blur">
                 <span class="input-l">100</span>
               </div>
             </div>
@@ -80,51 +80,58 @@
               <label for="">Porporcion</label>
               <div class="input">
                 <span class="input-l">00</span>
-                <input type="range" min="0" max="100">
+                <input type="range" min="0" max="100" id="input-spread">
                 <span class="input-l">100</span>
               </div>
             </div>
   
             <div class="form-1 color-picker">
               <label for="">Color de sombra: </label>
-              <input type="color" value="#000000">
+              <input type="color" value="#000000" id="input-color">
             </div>
   
             <div class="form-1">
               <label for="">Opacidad</label>
               <div class="input">
                 <span class="input-l">0</span>
-                <input type="range" min="0" max="100">
+                <input type="range" min="0" max="100" id="input-opacity">
                 <span class="input-l">1</span>
               </div>
             </div>
           </form>
 
-          <div class="float-btn">
+          <div class="float-btn" id="float-btn">
             <div class="btn-float-orange">
               <div class="logo-refresh"></div>
             </div>
-            <!-- <span>Reestablecer estilos</span> -->
+            <span class="tooltip">Reiniciar</span>
           </div>
         </div>
         
         <!-- Second Tab -->
         <div id="Tab-2" class="tabcontent">
-          <h3>Tab 2</h3>
-          <p>Description tab 2.</p> 
+          <div class="tab-2">
+            <h3>Tab 2</h3>
+            <p>Description tab 2.</p> 
+          </div>
         </div>
         
         <!-- Third Tab -->
         <div id="Tab-3" class="tabcontent">
-          <h3>Tab 3</h3>
-          <p>Descripction tab 3.</p>
+          <div class="tab-3">
+            <h3>Tab 3</h3>
+            <p>Descripction tab 3.</p>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
+  <div id="snackbar">Estilo Copiado</div>
+
   <script src="assets/js/anime.min.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/box-shadow.js"></script>
 
 </body>
 </html>

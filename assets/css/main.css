@@ -1,5 +1,7 @@
 body {
-  background-color: #F0F0F0;
+  /* background-color: #F0F0F0; */
+  background-image: url('../img/bg.jpg');
+  background-size: cover;
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -7,8 +9,8 @@ body {
   position: relative;
   font-family: Lato, sans-serif;
   color: #000;
+  overflow: hidden;
 }
-
 
 /* Contenedor principal */
 .container {
@@ -19,13 +21,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 3px 20px 50px 5px #00000011;
+  box-shadow: 3px 20px 50px 5px #00000044;
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1fr;
   border-radius: 5px;
 }
-
-
 
 /* ------------------- */
 /* Contendio izquierdo */
@@ -68,7 +68,7 @@ li {
   top: 66%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 3px 20px 50px 5px #00000011;
+  box-shadow: 3px 20px 50px 5px rgba(0, 0, 0, .1);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ li {
 .card-description {
   margin: 0;
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: 11px;
 }
 
 .card-options {
@@ -104,8 +104,6 @@ footer {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
-
 
 /* ----------------- */
 /* Contenido derecho */
@@ -151,8 +149,6 @@ footer {
   padding: 6px 12px;
 }
 
-
-
 /* --------------- */
 /* Estilos 1er Tab */
 /* --------------- */
@@ -165,8 +161,12 @@ footer {
   position: relative;
 }
 
+.tab-2, .tab-3 {
+  height: 306px;
+}
+
 .form-1 {
-  width: 300px;
+  width: 270px;
 }
 
 .input {
@@ -179,15 +179,14 @@ footer {
 
 input[type=range] {
   width: 250px;
-  -webkit-appearance: none; /* Reiniciamos los estilos */
+  -webkit-appearance: none; /* Reiniciamos los estilos*/
 }
 
 input[type=range]::-webkit-slider-runnable-track {
   width: 250px;
-  height: 3px;
+  height: 2px;
   background: #000;
   border: none;
-  border-radius: 0;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -207,7 +206,7 @@ input[type=range]:focus {
 /* Mozilla */
 input[type=range]::-moz-range-track {
   width: 250px;
-  height: 3px;
+  height: 2px;
   background: #000;
   border: none;
   border-radius: 0;
@@ -253,7 +252,6 @@ input[type=color]::-webkit-color-swatch {
   font-weight: 500;
 }
 
-
 /* -------------- */
 /* Boton flotante */
 /* -------------- */
@@ -285,4 +283,93 @@ input[type=color]::-webkit-color-swatch {
   width: 20px;
   height: 20px;
   background-image: url('../img/refresh.svg');
+}
+
+/* ------- */
+/* Tooltip */
+/* ------- */
+.tooltip {
+  position: absolute;
+  top: -90%;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  background: #FBBC00;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease .5s all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.float-btn:hover span {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0px);
+}
+
+.tooltip:before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 49%;
+  transform: rotate(45deg) translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #FBBC00;
+  z-index: -1;
+}
+
+/* ---------------- */
+/* Mensaje snackbar */
+/* ---------------- */
+#snackbar {
+  height: 40px;
+  background: #000;
+  position: absolute;
+  width: 300px;
+  transform: translate(-50%);
+  visibility: hidden;
+  left: 50%;
+  bottom: 0;
+  color: #fff;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#snackbar.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: -35px;
+    opacity: 0;      
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  to {
+    bottom: -35px;
+    opacity: 0;
+  }
 }
