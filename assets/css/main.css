@@ -373,3 +373,36 @@ input[type=color]::-webkit-color-swatch {
     opacity: 0;
   }
 }
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+/* Extra largos dispositivos (laptops & desktop screens) */
+/* Para pantallas que tengan como minimo un ancho de 1200px */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 87%;
+    height: 84%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 3px 20px 50px 5px #00000044;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5px;
+  }
+  
+  .img-logo {
+    display: block;
+  }
+
+  footer {
+    display: flex;
+  }
+
+  .tab button {
+    padding: 14px 30px;
+  }
+}

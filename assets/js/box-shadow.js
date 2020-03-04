@@ -62,11 +62,10 @@ document.getElementById('float-btn').addEventListener('click', () => {
   card.style.boxShadow = `3px 20px 50px 5px rgba(0, 0, 0, 0.1)`
   output.innerHTML =  `-webkit-box-shadow: 3px 20px 50px 5px rgba(0, 0, 0, 0.1);<br>
                       -moz-box-shadow: 3px 20px 50px 5px rgba(0, 0, 0, 0.1);<br>
-                      box-shadow: 3px 20px 50px 5px rgba(0, 0, 0, 0.1)`
+                      box-shadow: 3px 20px 50px 5px rgba(0, 0, 0, 0.1)`                    
 })
 
-document.getElementById('copy-btn').addEventListener('click', () => {
-  
+document.getElementById('copy-btn').addEventListener('click', () => { 
   let range = document.createRange()
   range.selectNode(document.getElementById('card-description'))
   window.getSelection().removeAllRanges()
